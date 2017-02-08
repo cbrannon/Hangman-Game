@@ -50,11 +50,21 @@ $(document).ready(function() {
             console.log("Wins updated to: " + this.wins);
         }
 
+        this.reset = function() {
+            this.guessesRemaining = 25;
+            this.correctGuesses = [];
+            this.wrongGuesses = [];
+            this.setQuestion();
+            $("#guess-count").html(this.guessesRemaining);
+            console.log("Guesses updated to: " + this.guessesRemaining);
+        }
+
         this.checkWin = function() {
             if (this.correctGuesses.length == this.answerChars.length) {
                 this.wins += 1;
                 $("#win-count").html(this.wins);
                 console.log("Wins updated to: " + this.wins);
+                this.reset();
             }
         }
     }
@@ -64,7 +74,6 @@ $(document).ready(function() {
         if (game == undefined) {
             game = new Game();
             game.setQuestion();
-            console.log(game);
         } else {
             if (game.answerChars.indexOf(keyPressed) == -1) {
                 if (game.wrongGuesses.indexOf(keyPressed) == -1) {
