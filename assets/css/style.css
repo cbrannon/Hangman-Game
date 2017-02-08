@@ -1,0 +1,45 @@
+/******** Sizing and Layout *********/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 940px;
+}
+
+.logo {
+  max-height: 200px;
+  margin: 0 auto;
+}
+
+.game-container {
+  height: 500px;
+  padding: 10px;
+}
+
+.question-area, .play-area {
+  height: 100%;
+
+}
+
+/******** Colors ***********/
+.game-container {
+  background: black;
+  border-radius: 10px;
+}
+
+.question-area {
+  background: white;
+  border-radius: 10px;
+}
+
+.play-area {
+  background: white;
+  border-radius: 10px;
+}
+
+/********* Text Styles *********/
+.game-container {
+  font-family: 'Voltaire', sans-serif;
+  font-size: 24px;
+}
