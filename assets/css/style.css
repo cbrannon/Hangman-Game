@@ -43,3 +43,7 @@ body {
   font-family: 'Voltaire', sans-serif;
   font-size: 24px;
 }
+
+#answer-display {
+  display: none;
+}

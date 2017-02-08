@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var game;
 
     function Game() {
         var questions = {
@@ -14,7 +15,7 @@ $(document).ready(function() {
                 imgLink: "",
                 audio: "",
             },
-            2: {
+            3: {
                 question: "Who are you?",
                 answer: "dog",
                 imgLink: "",
@@ -24,7 +25,7 @@ $(document).ready(function() {
 
         this.wins = 0;
         this.guesses = [];
-        this.questionChars;
+        this.answerChars;
 
         this.addWin = function() {
             this.wins += 1;
@@ -37,19 +38,35 @@ $(document).ready(function() {
             this.answer = randomQuestion["answer"];
             this.image = randomQuestion["imgLink"];
             this.audio = randomQuestion["audio"];
-            this.questionChars = this.answer.split('');
+            this.answerChars = this.answer.split('');
+
+            $("#answer-display").html(this.answer);
+            $("#answer-display").html(this.answer);
+            $("#answer-display").html(this.answer);
+            $("#answer-display").html(this.answer);
+
+            console.log("Set question to: " + this.question);
+            console.log("Set answer to: " + this.answer);
+            console.log("Set image path to: " + this.image);
+            console.log("Set audio path to: " + this.audio);
+            console.log("Set answer characters to: " + this.answerChars);
         }
 
         this.addGuess = function(guess) {
             this.guesses.push(guess);
+            console.log("Character guessed: " + guess);
         }
-
-
     }
 
-    var game = new Game();
-    game.setQuestion();
+    $(document).keypress(function(event) {
+        if (game == undefined) {
+            game = new Game();
+            game.setQuestion();
+            console.log(game);
+        }
+    });
 
 
-    console.log(game.questionChars);
+
+
 });
