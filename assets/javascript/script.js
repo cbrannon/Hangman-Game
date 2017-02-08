@@ -1,43 +1,53 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 
-  function Game() {
-    this.questions = [];
-    this.wins = 0;
-    this.guesses = [];
-    var questions = {
-      1: { question: "Who dat?",
-           answer: "Me",
-           imgLink: "",
-           audio: "",
-         },
-      2: { question: "Who are you?",
-           answer: "dog",
-           imgLink: "",
-           audio: "",
-         },
-    };
+    function Game() {
+        var questions = {
+            1: {
+                question: "Who dat?",
+                answer: "Me",
+                imgLink: "",
+                audio: "",
+            },
+            2: {
+                question: "Who are you?",
+                answer: "dog",
+                imgLink: "",
+                audio: "",
+            },
+            2: {
+                question: "Who are you?",
+                answer: "dog",
+                imgLink: "",
+                audio: "",
+            },
+        };
 
-    this.addWin = function() {
-      this.wins+=1;
+        this.wins = 0;
+        this.guesses = [];
+
+        this.addWin = function() {
+            this.wins += 1;
+        }
+
+        this.setQuestion = function() {
+            var randomQuestion = questions[Object.keys(questions)[Math.floor(Math.random() * Object.keys(questions).length)]];
+            this.question = randomQuestion["question"];
+            this.answer = randomQuestion["answer"];
+            this.image = randomQuestion["imgLink"];
+            this.audio = randomQuestion["audio"];
+
+
+        }
+
+        this.addGuess = function(guess) {
+            this.guesses.push(guess);
+        }
     }
 
-    this.setQuestion = function() {
-      var question = questions[Object.keys(questions)[Math.floor(Math.random()*Object.keys(questions).length)]];
-      this.question = question["question"];
-      this.answer = question["answer"];
-      this.image = question["imgLink"];
-      this.audio = question["audio"];
-    }
+    var game = new Game();
+    game.setQuestion();
 
-    this.addGuess = function(guess) {
-      this.guesses.push(guess);
-    }
-  }
 
-  var game = new Game();
-  game.setQuestion();
-  game.addWin();
-  game.addGuess("A");
 
-  console.log(game.guesses);
+    console.log(game.wins);
 });
