@@ -44,11 +44,6 @@ $(document).ready(function() {
             console.log("Set answer characters to: " + this.answerChars);
         }
 
-        this.addGuess = function(guess) {
-            this.guesses.push(guess);
-            console.log("Character guessed: " + guess);
-        }
-
         this.reduceGuessesRemaining = function() {
             this.guessesRemaining -= 1;
             $("#guess-count").html(this.guessesRemaining);
@@ -85,6 +80,4 @@ $(document).ready(function() {
         }
         console.log(String.fromCharCode(keyPressed));
     });
-
-
 });
