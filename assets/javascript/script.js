@@ -5,32 +5,29 @@ $(document).ready(function() {
         var questions = {
             1: {
                 question: "Who dat?",
-                answer: "Me",
+                answer: "ME",
                 imgLink: "",
                 audio: "",
             },
             2: {
                 question: "Who are you?",
-                answer: "dog",
+                answer: "DOG",
                 imgLink: "",
                 audio: "",
             },
             3: {
                 question: "Who are you?",
-                answer: "dog",
+                answer: "DOG",
                 imgLink: "",
                 audio: "",
             },
         };
 
         this.wins = 0;
-        this.guesses = [];
+        this.correctGuesses = [];
+        this.wrongGuesses = [];
         this.answerChars;
-
-        this.addWin = function() {
-            this.wins += 1;
-            $("#win-count").html(this.wins);
-        }
+        this.guessesRemaining = 25;
 
         this.setQuestion = function() {
             var randomQuestion = questions[Object.keys(questions)[Math.floor(Math.random() * Object.keys(questions).length)]];
@@ -39,11 +36,6 @@ $(document).ready(function() {
             this.image = randomQuestion["imgLink"];
             this.audio = randomQuestion["audio"];
             this.answerChars = this.answer.split('');
-
-            $("#answer-display").html(this.answer);
-            $("#answer-display").html(this.answer);
-            $("#answer-display").html(this.answer);
-            $("#answer-display").html(this.answer);
 
             console.log("Set question to: " + this.question);
             console.log("Set answer to: " + this.answer);
@@ -56,17 +48,43 @@ $(document).ready(function() {
             this.guesses.push(guess);
             console.log("Character guessed: " + guess);
         }
+
+        this.reduceGuessesRemaining = function() {
+            this.guessesRemaining -= 1;
+            $("#guess-count").html(this.guessesRemaining);
+            console.log("Wins updated to: " + this.wins);
+        }
+
+        this.checkWin = function() {
+            if (this.correctGuesses.length == this.answerChars.length) {
+                this.wins += 1;
+                $("#win-count").html(this.wins);
+                console.log("Wins updated to: " + this.wins);
+            }
+        }
     }
 
     $(document).keypress(function(event) {
+        var keyPressed = String.fromCharCode(event.keyCode).toUpperCase();
         if (game == undefined) {
             game = new Game();
             game.setQuestion();
             console.log(game);
+        } else {
+            if (game.answerChars.indexOf(keyPressed) == -1) {
+                if (game.wrongGuesses.indexOf(keyPressed) == -1) {
+                    game.wrongGuesses.push(keyPressed);
+                    game.reduceGuessesRemaining();
+                    console.log("Character added to wrong guesses: " + keyPressed);
+                }
+            } else {
+                game.correctGuesses.push(keyPressed);
+                console.log("Character added to correct guesses: " + keyPressed);
+                game.checkWin();
+            }
         }
+        console.log(String.fromCharCode(keyPressed));
     });
-
-
 
 
 });
