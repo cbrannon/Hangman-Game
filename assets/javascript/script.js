@@ -24,9 +24,11 @@ $(document).ready(function() {
 
         this.wins = 0;
         this.guesses = [];
+        this.questionChars;
 
         this.addWin = function() {
             this.wins += 1;
+            $("#win-count").html(this.wins);
         }
 
         this.setQuestion = function() {
@@ -35,19 +37,19 @@ $(document).ready(function() {
             this.answer = randomQuestion["answer"];
             this.image = randomQuestion["imgLink"];
             this.audio = randomQuestion["audio"];
-
-
+            this.questionChars = this.answer.split('');
         }
 
         this.addGuess = function(guess) {
             this.guesses.push(guess);
         }
+
+
     }
 
     var game = new Game();
     game.setQuestion();
 
 
-
-    console.log(game.wins);
+    console.log(game.questionChars);
 });
