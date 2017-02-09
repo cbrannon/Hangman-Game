@@ -21,7 +21,7 @@ body {
   height: 100%;
 }
 
-.question-area {
+.question-area, .play-area {
   padding: 20px;
 }
 
@@ -59,9 +59,21 @@ body {
 /********* Text Styles *********/
 .game-container {
   font-family: 'Voltaire', sans-serif;
+}
+
+.question-area  {
   font-size: 24px;
+}
+
+.play-area {
+  font-size: 18px;
 }
 
 #answer-display {
   display: none;
+}
+
+#wrong-guesses {
+  letter-spacing: 8px;
+  overflow-wrap: break-word;
 }
