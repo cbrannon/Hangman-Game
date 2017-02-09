@@ -19,10 +19,28 @@ body {
 
 .question-area, .play-area {
   height: 100%;
+}
 
+.question-area {
+  padding: 20px;
+}
+
+#question-image {
+  max-height: 350px;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: solid 8px black;
+}
+
+#question, #question-image {
+  margin-bottom: 20px;
 }
 
 /******** Colors ***********/
+body {
+  background-color: grey;
+}
+
 .game-container {
   background: black;
   border-radius: 10px;

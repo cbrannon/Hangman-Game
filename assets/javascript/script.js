@@ -2,32 +2,62 @@ $(document).ready(function() {
     var game;
 
     function Game() {
-        var questions = {
-            1: {
-                question: "Who dat?",
-                answer: "ME",
-                imgLink: "",
-                audio: "",
-            },
-            2: {
-                question: "Who are you?",
-                answer: "DOG",
-                imgLink: "",
-                audio: "",
-            },
-            3: {
-                question: "Who are you?",
-                answer: "DOG",
-                imgLink: "",
-                audio: "",
-            },
-        };
-
         this.wins = 0;
         this.correctGuesses = [];
         this.wrongGuesses = [];
         this.answerChars;
-        this.guessesRemaining = 25;
+        this.guessesRemaining = 15;
+
+        var questions = {
+            1: {
+                question: "Name of band?",
+                answer: "MODEST MOUSE",
+                imgLink: "assets/images/ozzy.jpg",
+                audio: "",
+            },
+            2: {
+                question: "Name of band?",
+                answer: "RADIOHEAD",
+                imgLink: "assets/images/ozzy.jpg",
+                audio: "",
+            },
+            3: {
+                question: "Name of band?",
+                answer: "MAC DEMARCO",
+                imgLink: "assets/images/ozzy.jpg",
+                audio: "",
+            },
+            4: {
+                question: "Name of band?",
+                answer: "THE MARS VOLTA",
+                imgLink: "assets/images/ozzy.jpg",
+                audio: "",
+            },
+            5: {
+                question: "Name of band?",
+                answer: "PIXIES",
+                imgLink: "assets/images/ozzy.jpg",
+                audio: "",
+            },
+            6: {
+                question: "Name of band?",
+                answer: "Sonic Youth",
+                imgLink: "assets/images/ozzy.jpg",
+                audio: "",
+            },
+            6: {
+                question: "Name of band?",
+                answer: "YEAH YEAH YEAHS",
+                imgLink: "assets/images/ozzy.jpg",
+                audio: "",
+            },
+            7: {
+                question: "Name of band?",
+                answer: "LIARS",
+                imgLink: "assets/images/ozzy.jpg",
+                audio: "",
+            },
+        };
 
         this.setQuestion = function() {
             var randomQuestion = questions[Object.keys(questions)[Math.floor(Math.random() * Object.keys(questions).length)]];
@@ -36,6 +66,11 @@ $(document).ready(function() {
             this.image = randomQuestion["imgLink"];
             this.audio = randomQuestion["audio"];
             this.answerChars = this.answer.split('');
+
+            $("#question-image").attr("src", this.image);
+            $("#question").html(this.question);
+            $("#audio").attr("src", this.audio);
+            $("#word-display").html(this.answerChars);
 
             console.log("Set question to: " + this.question);
             console.log("Set answer to: " + this.answer);
@@ -48,10 +83,14 @@ $(document).ready(function() {
             this.guessesRemaining -= 1;
             $("#guess-count").html(this.guessesRemaining);
             console.log("Wins updated to: " + this.wins);
+
+            if (this.guessesRemaining == 0) {
+                this.setQuestion();
+            }
         }
 
         this.reset = function() {
-            this.guessesRemaining = 25;
+            this.guessesRemaining = 15;
             this.correctGuesses = [];
             this.wrongGuesses = [];
             this.setQuestion();
@@ -60,7 +99,19 @@ $(document).ready(function() {
         }
 
         this.checkWin = function() {
-            if (this.correctGuesses.length == this.answerChars.length) {
+            var hasWon = false;
+            for (var i = 0; i < this.answerChars.length; i++) {
+                if (this.correctGuesses.indexOf(this.answerChars[i]) == -1) {
+                    hasWon = true;
+                } else {
+                    hasWon = false;
+                    break;
+                }
+            }
+            console.log("Current answer characters: " + this.answerChars.length);
+            console.log("Win status: " + hasWon);
+
+            if (hasWon) {
                 this.wins += 1;
                 $("#win-count").html(this.wins);
                 console.log("Wins updated to: " + this.wins);
@@ -70,7 +121,7 @@ $(document).ready(function() {
     }
 
     $(document).keypress(function(event) {
-        var keyPressed = String.fromCharCode(event.keyCode).toUpperCase();
+        var keyPressed = String.fromCharCode(event.which).toUpperCase();
         if (game == undefined) {
             game = new Game();
             game.setQuestion();
@@ -78,15 +129,23 @@ $(document).ready(function() {
             if (game.answerChars.indexOf(keyPressed) == -1) {
                 if (game.wrongGuesses.indexOf(keyPressed) == -1) {
                     game.wrongGuesses.push(keyPressed);
-                    game.reduceGuessesRemaining();
-                    console.log("Character added to wrong guesses: " + keyPressed);
+                    if (game.guessesRemaining == 0) {
+                        game.reset();
+                    } else {
+                        game.reduceGuessesRemaining();
+                        $("#wrong-guesses").html(this.wrongGuesses);
+                        console.log("Character added to wrong guesses: " + keyPressed);
+                    }
                 }
             } else {
-                game.correctGuesses.push(keyPressed);
-                console.log("Character added to correct guesses: " + keyPressed);
-                game.checkWin();
+                if (game.correctGuesses.indexOf(keyPressed) == -1) {
+                    game.correctGuesses.push(keyPressed);
+                    console.log("Character added to correct guesses: " + keyPressed);
+                    game.checkWin();
+                }
             }
         }
         console.log(String.fromCharCode(keyPressed));
+        console.log(game.correctGuesses);
     });
 });
