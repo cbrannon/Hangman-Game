@@ -159,6 +159,7 @@ $(document).ready(function() {
                         var correctGuessClass = "." + key;
                         this.correctGuesses.push(key);
                         $(correctGuessClass).css("color", "black");
+                        $(correctGuessClass).css("border-bottom", "none");
                         console.log("Character added to correct guesses: " + key);
                         this.checkWin();
                     }

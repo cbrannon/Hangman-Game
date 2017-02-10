@@ -73,13 +73,17 @@ body {
   font-size: 18px;
 }
 
+.play-area .row p {
+  line-height: 30px;
+}
+
 .bottom-border {
   border-bottom: 2px solid #000;
 }
 
 .answer-char {
   margin: 0 2px;
-  color: white;r
+  color: white;
 }
 
 #word-display {
