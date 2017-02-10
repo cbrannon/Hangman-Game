@@ -7,7 +7,7 @@ $(document).ready(function() {
         this.wrongGuesses = [];
         this.answerChars;
         this.currentWord = "";
-        this.guessesRemaining = 15;
+        this.guessesRemaining = 10;
 
         var questions = [{
                 question: "Name this American rock band formed in 1992 in Issaquah, Washington.",
@@ -178,7 +178,7 @@ $(document).ready(function() {
         }
 
         this.reset = function() {
-            this.guessesRemaining = 15;
+            this.guessesRemaining = 10;
             this.currentWord = " ";
             this.correctGuesses = [];
             this.wrongGuesses = [];
