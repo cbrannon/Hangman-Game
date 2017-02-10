@@ -89,12 +89,6 @@ $(document).ready(function() {
             },
             {
                 question: "Name of band?",
-                answer: "KING GIZZARD AND THE LIZARD WIZARD",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
-            },
-            {
-                question: "Name of band?",
                 answer: "TELEVISION",
                 imgLink: "assets/images/ozzy.jpg",
                 audio: ""
@@ -162,7 +156,9 @@ $(document).ready(function() {
                     }
                 } else {
                     if (this.correctGuesses.indexOf(key) == -1) {
+                        var correctGuessClass = "." + key;
                         this.correctGuesses.push(key);
+                        $(correctGuessClass).css("color", "black");
                         console.log("Character added to correct guesses: " + key);
                         this.checkWin();
                     }
@@ -175,11 +171,12 @@ $(document).ready(function() {
                 var character = this.answerChars[charIndex];
                 console.log("Current character in currentWord array: " + character);
                 if (character == " ") {
-                    var spaceString = "<span class='answer-char'>" + character + "</span>";
+                    var spaceString = "<span class='answer-char'> </span>";
                     console.log("Space string: " + spaceString)
                     this.currentWord += spaceString;
                 } else {
-                    var charString = "<span class='answer-char bottom-border'>" + character + "</span>";
+                    var charString = "<span class='answer-char bottom-border " +
+                        character + "'>" + character + "</span>";
                     console.log("Character string: " + charString)
                     this.currentWord += charString;
                 }
@@ -199,7 +196,7 @@ $(document).ready(function() {
 
         this.reset = function() {
             this.guessesRemaining = 15;
-            this.currentWord = "";
+            this.currentWord = " ";
             this.correctGuesses = [];
             this.wrongGuesses = [];
             this.setQuestion();
@@ -227,9 +224,10 @@ $(document).ready(function() {
 
             if (hasWon) {
                 this.wins += 1;
+                $("#question").html("WINNER!!!!");
                 $("#win-count").html(this.wins);
                 console.log("Wins updated to: " + this.wins);
-                this.reset();
+                setInterval(this.reset, 1000);
             }
         }
     }

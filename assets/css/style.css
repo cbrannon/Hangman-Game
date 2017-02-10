@@ -75,11 +75,12 @@ body {
 
 .answer-char {
   margin: 0 2px;
-  color: white;
+  color: white;r
 }
 
 #word-display {
   letter-spacing: 8px;
+  user-select: none;
 }
 
 #wrong-guesses {
