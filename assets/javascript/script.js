@@ -227,7 +227,7 @@ $(document).ready(function() {
                 $("#question").html("WINNER!!!!");
                 $("#win-count").html(this.wins);
                 console.log("Wins updated to: " + this.wins);
-                setInterval(this.reset, 1000);
+                $(this).reset().delay(800);
             }
         }
     }

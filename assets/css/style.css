@@ -25,6 +25,10 @@ body {
   padding: 20px;
 }
 
+.play-area .row {
+  margin-bottom: 20px;
+}
+
 #question-image {
   max-height: 350px;
   margin: 0 auto;
