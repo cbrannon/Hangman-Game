@@ -93,6 +93,18 @@ $(document).ready(function() {
                 imgLink: "assets/images/animal-collective.jpg",
                 audio: "assets/audio/Today's Supernatural.mp3"
             },
+            {
+                question: "Name this Swedish alternative and experimental fusion music group.",
+                answer: "GOAT",
+                imgLink: "assets/images/goat.jpg",
+                audio: "assets/audio/Run To Your Mama.mp3"
+            },
+            {
+                question: "Name this experimental hip hop group from Sacramento, California, formed in 2010.",
+                answer: "DEATH GRIPS",
+                imgLink: "assets/images/death-grips.jpg",
+                audio: "assets/audio/Giving Bad People Good Ideas.mp3"
+            },
         ];
 
         this.setQuestion = function() {
