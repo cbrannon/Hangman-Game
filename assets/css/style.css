@@ -69,8 +69,17 @@ body {
   font-size: 18px;
 }
 
-#answer-display {
-  display: none;
+.bottom-border {
+  border-bottom: 2px solid #000;
+}
+
+.answer-char {
+  margin: 0 2px;
+  color: white;
+}
+
+#word-display {
+  letter-spacing: 8px;
 }
 
 #wrong-guesses {

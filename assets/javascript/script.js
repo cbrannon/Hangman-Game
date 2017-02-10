@@ -6,131 +6,134 @@ $(document).ready(function() {
         this.correctGuesses = [];
         this.wrongGuesses = [];
         this.answerChars;
+        this.currentWord = "";
         this.guessesRemaining = 15;
 
-        var questions = {
-            1: {
+        var questions = [{
                 question: "Name of band?",
                 answer: "MODEST MOUSE",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            2: {
+            {
                 question: "Name of band?",
                 answer: "RADIOHEAD",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            3: {
+            {
                 question: "Name of this dork?",
                 answer: "MAC DEMARCO",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            4: {
+            {
                 question: "Name of band?",
                 answer: "THE MARS VOLTA",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            5: {
+            {
                 question: "Name of band?",
                 answer: "PIXIES",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            6: {
+            {
                 question: "Name of band?",
                 answer: "SONIC YOUTH",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            7: {
+            {
                 question: "Name of band?",
                 answer: "YEAH YEAH YEAHS",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            8: {
+            {
                 question: "Name of band?",
                 answer: "LIARS",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            9: {
+            {
                 question: "Front man of Radiohead?",
                 answer: "THOM YORKE",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            10: {
+            {
                 question: "Lead singer of Yeah Yeah Yeahs?",
                 answer: "KAREN O",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            11: {
+            {
                 question: "What's the name of this baby?",
                 answer: "TY SEGALL",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            12: {
+            {
                 question: "Name of band?",
                 answer: "THE GROWLERS",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            13: {
+            {
                 question: "Name of band?",
                 answer: "WAVVES",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            14: {
+            {
                 question: "Name of band?",
                 answer: "KING GIZZARD AND THE LIZARD WIZARD",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            15: {
+            {
                 question: "Name of band?",
                 answer: "TELEVISION",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            16: {
+            {
                 question: "Name of band?",
                 answer: "GANG OF FOUR",
                 imgLink: "assets/images/ozzy.jpg",
                 audio: "",
             },
-            17: {
+            {
                 question: "Name of band?",
                 answer: "JOY DIVISION",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                audio: ""
             },
-            18: {
+            {
                 question: "Name of band?",
                 answer: "ATOMS FOR PEACE",
                 imgLink: "assets/images/ozzy.jpg",
-                audio: "",
-            },
-        };
+                audio: ""
+            }
+        ];
 
         this.setQuestion = function() {
-            var randomQuestion = questions[Object.keys(questions)[Math.floor(Math.random() * Object.keys(questions).length)]];
+            var randomQuestion = questions[Math.floor(Math.random() * Object.keys(questions).length)];
+
             this.question = randomQuestion["question"];
             this.answer = randomQuestion["answer"];
             this.image = randomQuestion["imgLink"];
             this.audio = randomQuestion["audio"];
             this.answerChars = this.answer.split('');
 
+            this.createCurrentWord();
+
             $("#question-image").attr("src", this.image);
             $("#question").html(this.question);
             $("#audio").attr("src", this.audio);
-            $("#word-display").html(this.answerChars);
+            $("#word-display").html(this.currentWord);
 
             console.log("Set question to: " + this.question);
             console.log("Set answer to: " + this.answer);
@@ -139,32 +142,49 @@ $(document).ready(function() {
             console.log("Set answer characters to: " + this.answerChars);
 
             if (this.answerChars.indexOf(" ") != -1) {
-              this.correctGuesses.push(" ");
+                this.correctGuesses.push(" ");
             }
         }
 
         this.assignKey = function(key) {
-          if (key.match(/[a-z]/i)) {
-            if (this.answerChars.indexOf(key) == -1) {
-                if (this.wrongGuesses.indexOf(key) == -1) {
-                    this.wrongGuesses.push(key);
-                    if (this.guessesRemaining == 0) {
-                        thisn.reset();
-                    } else {
-                        this.reduceGuessesRemaining();
-                        $("#wrong-guesses").html(this.wrongGuesses);
-                        console.log("Character added to wrong guesses: " + key);
-                        console.log("Currently held wrong guesses: " + this.wrongGuesses);
+            if (key.match(/[a-z]/i)) {
+                if (this.answerChars.indexOf(key) == -1) {
+                    if (this.wrongGuesses.indexOf(key) == -1) {
+                        this.wrongGuesses.push(key);
+                        if (this.guessesRemaining == 0) {
+                            thisn.reset();
+                        } else {
+                            this.reduceGuessesRemaining();
+                            $("#wrong-guesses").html(this.wrongGuesses);
+                            console.log("Character added to wrong guesses: " + key);
+                            console.log("Currently held wrong guesses: " + this.wrongGuesses);
+                        }
+                    }
+                } else {
+                    if (this.correctGuesses.indexOf(key) == -1) {
+                        this.correctGuesses.push(key);
+                        console.log("Character added to correct guesses: " + key);
+                        this.checkWin();
                     }
                 }
-            } else {
-                if (this.correctGuesses.indexOf(key) == -1) {
-                    this.correctGuesses.push(key);
-                    console.log("Character added to correct guesses: " + key);
-                    this.checkWin();
+            }
+        }
+
+        this.createCurrentWord = function() {
+            for (var charIndex = 0; charIndex < this.answerChars.length; charIndex++) {
+                var character = this.answerChars[charIndex];
+                console.log("Current character in currentWord array: " + character);
+                if (character == " ") {
+                    var spaceString = "<span class='answer-char'>" + character + "</span>";
+                    console.log("Space string: " + spaceString)
+                    this.currentWord += spaceString;
+                } else {
+                    var charString = "<span class='answer-char bottom-border'>" + character + "</span>";
+                    console.log("Character string: " + charString)
+                    this.currentWord += charString;
                 }
             }
-          }
+            console.log("CurrentWord string: " + this.currentWord);
         }
 
         this.reduceGuessesRemaining = function() {
@@ -179,6 +199,7 @@ $(document).ready(function() {
 
         this.reset = function() {
             this.guessesRemaining = 15;
+            this.currentWord = "";
             this.correctGuesses = [];
             this.wrongGuesses = [];
             this.setQuestion();
@@ -190,15 +211,15 @@ $(document).ready(function() {
         this.checkWin = function() {
             var hasWon = false;
             for (var answerChar = 0; answerChar < this.answerChars.length; answerChar++) {
-              var charCheck = this.answerChars[answerChar];
-              console.log(charCheck);
+                var charCheck = this.answerChars[answerChar];
+                console.log(charCheck);
 
-              if (this.correctGuesses.indexOf(charCheck) == -1) {
-                hasWon = false;
-                break;
-              } else {
-                hasWon = true;
-              }
+                if (this.correctGuesses.indexOf(charCheck) == -1) {
+                    hasWon = false;
+                    break;
+                } else {
+                    hasWon = true;
+                }
             }
 
             console.log("Current answer characters: " + this.answerChars.length);
@@ -219,7 +240,7 @@ $(document).ready(function() {
             hangman = new Game();
             hangman.setQuestion();
         } else {
-          hangman.assignKey(keyPressed);
+            hangman.assignKey(keyPressed);
         }
         console.log(String.fromCharCode(keyPressed));
         console.log(hangman.correctGuesses);
