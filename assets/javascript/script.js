@@ -225,10 +225,9 @@ $(document).ready(function() {
 
             if (hasWon) {
                 this.wins += 1;
-                $("#question").html("WINNER!!!!");
                 $("#win-count").html(this.wins);
                 console.log("Wins updated to: " + this.wins);
-                $(this).reset().delay(800);
+                this.reset();
             }
         }
     }
