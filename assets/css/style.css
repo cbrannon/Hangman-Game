@@ -65,11 +65,7 @@ body {
   font-family: 'Voltaire', sans-serif;
 }
 
-.question-area  {
-  font-size: 24px;
-}
-
-.play-area {
+.question-area, .play-area  {
   font-size: 18px;
 }
 

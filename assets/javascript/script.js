@@ -10,107 +10,89 @@ $(document).ready(function() {
         this.guessesRemaining = 15;
 
         var questions = [{
-                question: "Name of band?",
+                question: "Name this American rock band formed in 1992 in Issaquah, Washington.",
                 answer: "MODEST MOUSE",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/modest-mouse.jpg",
+                audio: "assets/audio/Doin' the Cockroach.mp3"
             },
             {
-                question: "Name of band?",
+                question: "Name this English rock band from Abingdon, Oxfordshire, formed in 1985.",
                 answer: "RADIOHEAD",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/radiohead.jpg",
+                audio: "assets/audio/I Might Be Wrong.m4a"
             },
             {
-                question: "Name of this dork?",
-                answer: "MAC DEMARCO",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
-            },
-            {
-                question: "Name of band?",
+                question: "This band was an American rock band from El Paso, Texas, formed in 2001.",
                 answer: "THE MARS VOLTA",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/mars-volta.jpg",
+                audio: "assets/audio/Cassandra Geminni_ Tarantism.mp3"
             },
             {
-                question: "Name of band?",
+                question: "Name this American alternative rock band formed in 1986 in Boston, Massachusetts.",
                 answer: "PIXIES",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/pixies.jpg",
+                audio: "assets/audio/I Bleed.m4a"
             },
             {
-                question: "Name of band?",
+                question: "Name this American rock band from New York City, formed in 1981.",
                 answer: "SONIC YOUTH",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/sonic-youth.jpg",
+                audio: "assets/audio/Bull in the Heather.mp3"
             },
             {
-                question: "Name of band?",
+                question: "Name this American indie rock band formed in New York City in 2000?",
                 answer: "YEAH YEAH YEAHS",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/yeah-yeah-yeahs.jpg",
+                audio: "assets/audio/Rich.mp3"
             },
             {
-                question: "Name of band?",
+                question: "Name this three-piece band formed in 2000.",
                 answer: "LIARS",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/liars.jpg",
+                audio: "assets/audio/Sailing To Byzantium.mp3"
             },
             {
-                question: "Front man of Radiohead?",
+                question: "Name the frontman of Radiohead.",
                 answer: "THOM YORKE",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/thom-yorke.jpg",
+                audio: "assets/audio/A Brain In A Bottle.mp3"
             },
             {
-                question: "Lead singer of Yeah Yeah Yeahs?",
+                question: "Name the lead singer of Yeah Yeah Yeahs.",
                 answer: "KAREN O",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/karen-o.jpg",
+                audio: "assets/audio/Pin.mp3"
             },
             {
-                question: "What's the name of this baby?",
-                answer: "TY SEGALL",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
-            },
-            {
-                question: "Name of band?",
-                answer: "THE GROWLERS",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
-            },
-            {
-                question: "Name of band?",
+                question: "Name this American rock band based in San Diego, California.",
                 answer: "WAVVES",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/wavves.jpg",
+                audio: "assets/audio/Linus Spacehead.mp3"
             },
             {
-                question: "Name of band?",
-                answer: "TELEVISION",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
-            },
-            {
-                question: "Name of band?",
+                question: "Name this English post-punk group, formed in 1977 in Leeds.",
                 answer: "GANG OF FOUR",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: "",
+                imgLink: "assets/images/gang-of-four.jpg",
+                audio: "assets/audio/Damaged Goods.mp3"
             },
             {
-                question: "Name of band?",
+                question: "Name this English rock band formed in 1976 in Salford, Greater Manchester",
                 answer: "JOY DIVISION",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
+                imgLink: "assets/images/joy-division.jpg",
+                audio: "assets/audio/Disorder.mp3"
             },
             {
-                question: "Name of band?",
+                question: "Name this English-American alternative rock supergroup.",
                 answer: "ATOMS FOR PEACE",
-                imgLink: "assets/images/ozzy.jpg",
-                audio: ""
-            }
+                imgLink: "assets/images/atoms-for-peace.jpg",
+                audio: "assets/audio/Before Your Very Eyes....mp3"
+            },
+            {
+                question: "Name this American experimental pop band formed in Baltimore, Maryland in 2009.",
+                answer: "ANIMAL COLLECTIVE",
+                imgLink: "assets/images/animal-collective.jpg",
+                audio: "assets/audio/Today's Supernatural.mp3"
+            },
         ];
 
         this.setQuestion = function() {
