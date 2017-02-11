@@ -148,9 +148,11 @@ function Game() {
             } else {
                 if (this.correctGuesses.indexOf(key) == -1) {
                     var correctGuessClass = "." + key;
+                    var classQuery = document.querySelector(correctGuessClass);
                     this.correctGuesses.push(key);
-                    $(correctGuessClass).css("color", "black");
-                    $(correctGuessClass).css("border-bottom", "none");
+
+                    classQuery.style.color = "black";
+                    classQuery.style.borderBottom = "none";
                     console.log("Character added to correct guesses: " + key);
                     this.checkWin();
                 }
