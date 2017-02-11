@@ -147,12 +147,17 @@ function Game() {
                 }
             } else {
                 if (this.correctGuesses.indexOf(key) == -1) {
-                    var correctGuessClass = "." + key;
-                    var classQuery = document.querySelector(correctGuessClass);
+                    var correctGuessClass = key;
+                    var classQueries = document.getElementsByClassName(correctGuessClass);
                     this.correctGuesses.push(key);
 
-                    classQuery.style.color = "black";
-                    classQuery.style.borderBottom = "none";
+                    for (var i = 0; i < classQueries.length; i++) {
+                        classQueries[i].style.color = "black";
+                        classQueries[i].style.borderBottom = "none";
+                    }
+
+                    // classQuery.style.color = "black";
+                    // classQuery.style.borderBottom = "none";
                     console.log("Character added to correct guesses: " + key);
                     this.checkWin();
                 }
@@ -194,8 +199,8 @@ function Game() {
         this.correctGuesses = [];
         this.wrongGuesses = [];
         this.setQuestion();
-        document.getElementById("#guess-count").innerHTML = this.guessesRemaining;
-        document.getElementById("#wrong-guesses").innerHTML = "";
+        document.getElementById("guess-count").innerHTML = this.guessesRemaining;
+        document.getElementById("wrong-guesses").innerHTML = "";
         console.log("Guesses updated to: " + this.guessesRemaining);
     }
 
