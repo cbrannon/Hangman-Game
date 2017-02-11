@@ -179,7 +179,7 @@ function Game() {
     }
 
     this.reduceGuessesRemaining = function() {
-        this.guessesRemaining -= 1;
+        this.guessesRemaining--;
         document.getElementById("guess-count").innerHTML = this.guessesRemaining;
         console.log("Wins updated to: " + this.wins);
 
@@ -217,7 +217,7 @@ function Game() {
         console.log("Win status: " + hasWon);
 
         if (hasWon) {
-            this.wins += 1;
+            this.wins++;
             document.getElementById("win-count").innerHTML = this.wins;
             console.log("Wins updated to: " + this.wins);
             this.reset();
