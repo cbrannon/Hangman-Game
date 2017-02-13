@@ -64,7 +64,6 @@ body {
   color: #FFFFFF;
 }
 
-
 /********* Text Styles *********/
 .header-text {
   font-size: 72px;
@@ -104,20 +103,14 @@ body {
   overflow-wrap: break-word;
 }
 
+@media screen and (min-width: 1380px) {
+  .header-text {
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 1055px) {
   .header-text {
     font-size: 60px;
-  }
-}
-
-@media screen and (max-width: 684px) {
-  .header-text {
-    font-size: 42px;
-  }
-}
-
-@media screen and (max-width: 530px) {
-  .header-text {
-    font-size: 28px;
   }
 }

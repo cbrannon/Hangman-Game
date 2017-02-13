@@ -132,13 +132,13 @@ function Game() {
     }
 
     this.revealImage = function() {
-        var image = document.getElementsById("question-image");
+        var image = document.getElementById("question-image");
 
-        image.style["-webkit-filter"] = "blur(5px)";
-        image.style["-moz-filter"] = "blur(5px)";
-        image.style["-o-filter"] = "blur(5px)";
-        image.style["-ms-filter"] = "blur(5px)";
-        image.style.filter = "blur(5px)";
+        image.style["-webkit-filter"] = "blur(0px)";
+        image.style["-moz-filter"] = "blur(0px)";
+        image.style["-o-filter"] = "blur(0px)";
+        image.style["-ms-filter"] = "blur(0px)";
+        image.style.filter = "blur(0px)";
 
     }
 
@@ -234,6 +234,7 @@ function Game() {
         if (hasWon) {
             var thisGame = this;
             this.wins++;
+            // this.revealImage();
             document.getElementById("win-count").innerHTML = this.wins;
             document.getElementById("question").innerHTML = "WINNER!!!";
             console.log("Wins updated to: " + this.wins);
