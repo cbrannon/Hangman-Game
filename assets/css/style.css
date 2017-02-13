@@ -23,17 +23,40 @@ body {
 
 .question-area {
   padding: 0 auto;
+  margin-bottom: 20px;
 }
 
 .mbottom {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #question-image {
   border-radius: 10px;
   margin: 0 auto;
-  filter: blur(10px);
-  -webkit-filter: blur(10px);
+}
+
+.blur {
+  -webkit-animation: blur 30s linear forwards;
+  -moz-animation: blur 30s linear forwards;
+  -ms-animation: blur 30s linear forwards;
+  -o-animation: blur 30s linear forwards;
+  animation: blur 30s linear forwards;
+
+}
+
+@-webkit-keyframes blur {
+  0% { -webkit-filter: blur(20px);}
+  100% { -webkit-filter: blur(0px);}
+}
+
+@-moz-keyframes blur {
+  0% { -webkit-filter: blur(20px);}
+  100% { -webkit-filter: blur(0px);}
+}
+
+@keyframes blur {
+  0% { -webkit-filter: blur(20px);}
+  100% { -webkit-filter: blur(0px);}
 }
 
 /******** Colors ***********/

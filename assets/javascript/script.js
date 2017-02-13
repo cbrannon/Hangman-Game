@@ -131,6 +131,17 @@ function Game() {
         }
     }
 
+    this.revealImage = function() {
+        var image = document.getElementsById("question-image");
+
+        image.style["-webkit-filter"] = "blur(5px)";
+        image.style["-moz-filter"] = "blur(5px)";
+        image.style["-o-filter"] = "blur(5px)";
+        image.style["-ms-filter"] = "blur(5px)";
+        image.style.filter = "blur(5px)";
+
+    }
+
     this.assignKey = function(key) {
         if (key.match(/[a-z]/i)) {
             if (this.answerChars.indexOf(key) == -1) {
@@ -155,8 +166,6 @@ function Game() {
                         classQueries[i].style.borderBottom = "none";
                     }
 
-                    // classQuery.style.color = "black";
-                    // classQuery.style.borderBottom = "none";
                     console.log("Character added to correct guesses: " + key);
                     this.checkWin();
                 }
@@ -200,6 +209,8 @@ function Game() {
         this.setQuestion();
         document.getElementById("guess-count").innerHTML = this.guessesRemaining;
         document.getElementById("wrong-guesses").innerHTML = "";
+        document.getElementById("question-image").classList.remove("blur");
+        document.getElementById("question-image").classList.add("blur");
         console.log("Guesses updated to: " + this.guessesRemaining);
     }
 
@@ -221,10 +232,15 @@ function Game() {
         console.log("Win status: " + hasWon);
 
         if (hasWon) {
+            var thisGame = this;
             this.wins++;
             document.getElementById("win-count").innerHTML = this.wins;
+            document.getElementById("question").innerHTML = "WINNER!!!";
             console.log("Wins updated to: " + this.wins);
-            this.reset();
+            setTimeout(function() {
+                thisGame.reset();
+            }, 5000);
+
         }
     }
 }
@@ -239,4 +255,4 @@ document.onkeypress = function(event) {
     }
     console.log(String.fromCharCode(keyPressed));
     console.log(hangman.correctGuesses);
-}
+};
