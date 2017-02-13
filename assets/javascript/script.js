@@ -147,12 +147,11 @@ function Game() {
                 }
             } else {
                 if (this.correctGuesses.indexOf(key) == -1) {
-                    var correctGuessClass = key;
-                    var classQueries = document.getElementsByClassName(correctGuessClass);
+                    var classQueries = document.getElementsByClassName(key);
                     this.correctGuesses.push(key);
 
                     for (var i = 0; i < classQueries.length; i++) {
-                        classQueries[i].style.color = "black";
+                        classQueries[i].style.color = "#FFFFFF";
                         classQueries[i].style.borderBottom = "none";
                     }
 

@@ -4,90 +4,97 @@
 }
 
 body {
-  min-width: 940px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: none;
 }
 
-.logo {
-  max-height: 200px;
-  margin: 0 auto;
+.full {
+  background: #000000;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .game-container {
-  height: 500px;
-  padding: 10px;
+  height: 60vh;
 }
 
-.question-area, .play-area {
-  height: 100%;
+.question-area {
+  padding: 0 auto;
 }
 
-.question-area, .play-area {
-  padding: 20px;
-}
-
-.play-area .row {
+.mbottom {
   margin-bottom: 10px;
 }
 
 #question-image {
-  max-height: 350px;
+  border-radius: 10px;
   margin: 0 auto;
-  border-radius: 20px;
-  border: solid 8px black;
-}
-
-#question, #question-image {
-  margin-bottom: 20px;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
 }
 
 /******** Colors ***********/
-body {
-  background-color: grey;
+.header-text, .play-area, #question {
+  color: #FFFFFF;
 }
 
-.game-container {
-  background: black;
-  border-radius: 10px;
-}
-
-.question-area {
-  background: white;
-  border-radius: 10px;
-}
-
-.play-area {
-  background: white;
-  border-radius: 10px;
-}
 
 /********* Text Styles *********/
-.game-container {
-  font-family: 'Voltaire', sans-serif;
+.header-text {
+  font-size: 72px;
+  font-family: 'Raleway', sans-serif;
+  border-bottom: 2px solid #FFFFFF;
+  margin-bottom: 20px;
 }
 
-.question-area, .play-area  {
-  font-size: 18px;
-}
-
-.play-area .row p {
-  line-height: 30px;
+.play-area, #question {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
 }
 
 .bottom-border {
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #FFFFFF;
 }
 
 .answer-char {
-  margin: 0 2px;
-  color: white;
+  margin: auto 2px;
+  color: #000000;
+}
+
+#word-display, #wrong-guesses {
+  font-size: 36px;
+  font-family: 'Cousine', monospace;
 }
 
 #word-display {
+  line-height: 60px;
   letter-spacing: 8px;
   user-select: none;
+  color: black;
 }
 
 #wrong-guesses {
   letter-spacing: 8px;
   overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 1055px) {
+  .header-text {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 684px) {
+  .header-text {
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .header-text {
+    font-size: 28px;
+  }
 }

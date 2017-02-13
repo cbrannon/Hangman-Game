@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="full">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <title>Hangman Game</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Voltaire" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200|Cousine:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="assets/javascript/script.js"></script>
@@ -17,52 +17,50 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-6 col-xs-offset-3">
+            <div class="col-xs-8 col-xs-offset-2">
                 <div class="row header-container">
                     <div class="col-xs-12">
-                        <img src="assets/images/indie-rock-banner.png" class="img-responsive logo" alt="Hangman logo" />
+                        <h1 class="header-text">ROCK-N-ROLL HANGMAN</h1>
                     </div>
                 </div>
-                <div class="row game-container text-center">
-                    <div class="col-xs-6 question-area">
-                        <div class="row">
+                <div class="row game-container">
+                    <div class="col-xs-12 col-sm-6 text-center question-area">
+                        <div class="row mbottom">
                             <div class="col-xs-12">
                                 <img src="" id="question-image" class="img-responsive" />
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mtop">
                             <div class="col-xs-12">
-                                <div id="question"></div>
+                                <div class="mbottom" id="question"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-6 play-area">
+                    <div class="col-xs-12 col-sm-6 play-area">
                         <div class="row get-started">
                             <div class="col-xs-12">
                                 <p>PRESS ANY KEY TO GET STARTED!</p>
                             </div>
                         </div>
-                        <div class="row wins">
+                        <div class="row wins mbottom">
                             <div class="col-xs-12">
-                                <p>WINS</p>
-                                <p id="win-count">0</p>
+                                <p>WINS: <span id="win-count">0</span></p>
                             </div>
                         </div>
-                        <div class="row current-word">
+                        <div class="row current-word mbottom">
                             <div class="col-xs-12">
                                 <p>CURRENT WORD</p>
-                                <p id="word-display"></p>
+                                <p class="mtop" id="word-display"></p>
                             </div>
                         </div>
-                        <div class="row guesses">
+                        <div class="row guesses mbottom">
                             <div class="col-xs-12">
-                                <p>NUMBER OF GUESSES REMAINING</p>
-                                <p id="guess-count">10</p>
+                                <p>NUMBER OF GUESSES REMAINING: <span id="guess-count">10</span></p>
                             </div>
                         </div>
-                        <div class="row wrong-guesses">
+                        <div class="row wrong-guesses mbottom">
                             <div class="col-xs-12">
-                                <p>LETTERS ALREADY GUESSED</p>
+                                <p class="mbottom">LETTERS ALREADY GUESSED</p>
                                 <p id="wrong-guesses"></p>
                             </div>
                         </div>
