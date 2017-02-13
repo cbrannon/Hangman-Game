@@ -131,6 +131,17 @@ function Game() {
         }
     }
 
+    this.revealImage = function() {
+        var image = document.getElementById("question-image");
+
+        image.style["-webkit-filter"] = "blur(0px)";
+        image.style["-moz-filter"] = "blur(0px)";
+        image.style["-o-filter"] = "blur(0px)";
+        image.style["-ms-filter"] = "blur(0px)";
+        image.style.filter = "blur(0px)";
+
+    }
+
     this.assignKey = function(key) {
         if (key.match(/[a-z]/i)) {
             if (this.answerChars.indexOf(key) == -1) {
@@ -147,17 +158,14 @@ function Game() {
                 }
             } else {
                 if (this.correctGuesses.indexOf(key) == -1) {
-                    var correctGuessClass = key;
-                    var classQueries = document.getElementsByClassName(correctGuessClass);
+                    var classQueries = document.getElementsByClassName(key);
                     this.correctGuesses.push(key);
 
                     for (var i = 0; i < classQueries.length; i++) {
-                        classQueries[i].style.color = "black";
+                        classQueries[i].style.color = "#FFFFFF";
                         classQueries[i].style.borderBottom = "none";
                     }
 
-                    // classQuery.style.color = "black";
-                    // classQuery.style.borderBottom = "none";
                     console.log("Character added to correct guesses: " + key);
                     this.checkWin();
                 }
@@ -201,6 +209,8 @@ function Game() {
         this.setQuestion();
         document.getElementById("guess-count").innerHTML = this.guessesRemaining;
         document.getElementById("wrong-guesses").innerHTML = "";
+        document.getElementById("question-image").classList.remove("blur");
+        document.getElementById("question-image").classList.add("blur");
         console.log("Guesses updated to: " + this.guessesRemaining);
     }
 
@@ -222,10 +232,16 @@ function Game() {
         console.log("Win status: " + hasWon);
 
         if (hasWon) {
+            var thisGame = this;
             this.wins++;
+            // this.revealImage();
             document.getElementById("win-count").innerHTML = this.wins;
+            document.getElementById("question").innerHTML = "WINNER!!!";
             console.log("Wins updated to: " + this.wins);
-            this.reset();
+            setTimeout(function() {
+                thisGame.reset();
+            }, 5000);
+
         }
     }
 }
@@ -240,4 +256,4 @@ document.onkeypress = function(event) {
     }
     console.log(String.fromCharCode(keyPressed));
     console.log(hangman.correctGuesses);
-}
+};
