@@ -104,6 +104,54 @@ function Game() {
             imgLink: "assets/images/death-grips.jpg",
             audio: "assets/audio/Giving Bad People Good Ideas.mp3"
         },
+        {
+            question: "Name this garage rock band from Atlanta, Georgia.",
+            answer: "BLACK LIPS",
+            imgLink: "assets/images/black-lips.jpg",
+            audio: "assets/audio/Katrina.mp3"
+        },
+        {
+            question: "Name English rock band, formed in Birmingham in 1968, by guitarist and main songwriter Tony Iommi, bassist and main lyricist Geezer Butler, singer Ozzy Osbourne, and drummer Bill Ward.",
+            answer: "BLACK SABBATH",
+            imgLink: "assets/images/ozzy.jpg",
+            audio: "assets/audio/Paranoid.mp3"
+        },
+        {
+            question: "Name this 1960s British rock supergroup power trio consisting of bassist/singer Jack Bruce, drummer Ginger Baker, and guitarist/singer Eric Clapton.",
+            answer: "CREAM",
+            imgLink: "assets/images/cream.jpg",
+            audio: "assets/audio/White Room.mp3"
+        },
+        {
+            question: "Name this American experimental rock band whose erratic style veers between noise pop, punk rock, and avant-garde.",
+            answer: "DEERHOOF",
+            imgLink: "assets/images/deerhoof.jpg",
+            audio: "assets/audio/Siriustar.mp3"
+        },
+        {
+            question: "Name this American rock band from Atlanta, Georgia, formed in 2001. The band consists of Bradford Cox, Moses Archuleta, Lockett Pundt, Josh McKay, Javier Morales and Rhasaan Manning",
+            answer: "DEERHUNTER",
+            imgLink: "assets/images/deerhunter.jpg",
+            audio: "assets/audio/He Would Have Laughed.mp3"
+        },
+        {
+            question: "Name this American songwriter, singer, artist, and writer who has been influential in popular music and culture for more than five decades.",
+            answer: "BOB DYLAN",
+            imgLink: "assets/images/bob-dylan.jpg",
+            audio: "assets/audio/The Times They Are A-Changin'.mp3"
+        },
+        {
+            question: "Name this English rock band formed in London in 1968 consisting of guitarist Jimmy Page, singer Robert Plant, bassist and keyboardist John Paul Jones, and drummer John Bonham.",
+            answer: "LED ZEPPELIN",
+            imgLink: "assets/images/led-zeppelin.jpg",
+            audio: "assets/audio/Black Dog.mp3"
+        },
+        {
+            question: "Name this American heavy metal band from Atlanta, Georgia, formed in 2000 and composed of bassist Troy Sanders, guitarists Brent Hinds and Bill Kelliher and drummer Brann Dailor.",
+            answer: "MASTADON",
+            imgLink: "assets/images/mastadon.jpg",
+            audio: "assets/audio/Oblivion.m4a"
+        },
     ];
 
     this.setQuestion = function() {
@@ -224,7 +272,7 @@ function Game() {
             this.wins++;
             document.getElementById("question-image").classList.remove("blur");
             document.getElementById("win-count").innerHTML = this.wins;
-            document.getElementById("wrong-guesses").innerHTML = "WINNER!!!";
+            document.getElementById("wrong-guesses").innerHTML = "WINNER!";
             console.log("Wins updated to: " + this.wins);
             setTimeout(function() {
                 thisGame.reset();

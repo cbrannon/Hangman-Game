@@ -103,6 +103,10 @@ body {
   overflow-wrap: break-word;
 }
 
+#question {
+  font-size: 18px;
+}
+
 @media screen and (min-width: 1380px) {
   .header-text {
     text-align: center;
