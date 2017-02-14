@@ -131,17 +131,6 @@ function Game() {
         }
     }
 
-    this.revealImage = function() {
-        var image = document.getElementById("question-image");
-
-        image.style["-webkit-filter"] = "blur(0px)";
-        image.style["-moz-filter"] = "blur(0px)";
-        image.style["-o-filter"] = "blur(0px)";
-        image.style["-ms-filter"] = "blur(0px)";
-        image.style.filter = "blur(0px)";
-
-    }
-
     this.assignKey = function(key) {
         if (key.match(/[a-z]/i)) {
             if (this.answerChars.indexOf(key) == -1) {
@@ -209,7 +198,6 @@ function Game() {
         this.setQuestion();
         document.getElementById("guess-count").innerHTML = this.guessesRemaining;
         document.getElementById("wrong-guesses").innerHTML = "";
-        document.getElementById("question-image").classList.remove("blur");
         document.getElementById("question-image").classList.add("blur");
         console.log("Guesses updated to: " + this.guessesRemaining);
     }
@@ -234,9 +222,9 @@ function Game() {
         if (hasWon) {
             var thisGame = this;
             this.wins++;
-            // this.revealImage();
+            document.getElementById("question-image").classList.remove("blur");
             document.getElementById("win-count").innerHTML = this.wins;
-            document.getElementById("question").innerHTML = "WINNER!!!";
+            document.getElementById("wrong-guesses").innerHTML = "WINNER!!!";
             console.log("Wins updated to: " + this.wins);
             setTimeout(function() {
                 thisGame.reset();
