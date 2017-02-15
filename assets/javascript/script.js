@@ -19,11 +19,11 @@ function Game() {
         this.answerChars = this.answer.split('');
 
         console.group("Question Properties")
-          console.log("Set question to: " + this.question);
-          console.log("Set answer to: " + this.answer);
-          console.log("Set image path to: " + this.image);
-          console.log("Set audio path to: " + this.audio);
-          console.log("Set answer characters to: " + this.answerChars);
+        console.log("Set question to: " + this.question);
+        console.log("Set answer to: " + this.answer);
+        console.log("Set image path to: " + this.image);
+        console.log("Set audio path to: " + this.audio);
+        console.log("Set answer characters to: " + this.answerChars);
         console.groupEnd();
 
         this.createCurrentWord();
@@ -40,9 +40,9 @@ function Game() {
 
     // Takes key input checks if it's in the answer and pushes to array of correct or wrong guesses.
     this.assignKey = function(key) {
-      // Only acceps A-Z characters.
+        // Only acceps A-Z characters.
         if (key.match(/[a-z]/i)) {
-          // If not part of the answer and not currently in wrong guess array.
+            // If not part of the answer and not currently in wrong guess array.
             if (this.answerChars.indexOf(key) == -1 && this.wrongGuesses.indexOf(key) == -1) {
                 this.wrongGuesses.push(key);
                 this.reduceGuessesRemaining();
@@ -51,7 +51,7 @@ function Game() {
                 console.log("Character added to wrong guesses: " + key);
                 console.log("Currently held wrong guesses: " + this.wrongGuesses);
 
-          // If part of the answer and not currently in correct guess array.
+                // If part of the answer and not currently in correct guess array.
             } else if (this.answerChars.indexOf(key) !== -1 && this.correctGuesses.indexOf(key) == -1) {
                 var classQueries = document.getElementsByClassName(key);
                 this.correctGuesses.push(key);
@@ -70,7 +70,7 @@ function Game() {
 
     // Builds current word as html with classes corresponding to key input.
     this.createCurrentWord = function() {
-      console.group("Current Word");
+        console.group("Current Word");
         for (var charIndex = 0; charIndex < this.answerChars.length; charIndex++) {
             var character = this.answerChars[charIndex];
             console.log("Current character in currentWord array: " + character);
@@ -92,8 +92,8 @@ function Game() {
         if (this.guessesRemaining == 0) {
             this.reset();
         } else {
-          this.guessesRemaining--;
-          document.getElementById("guess-count").innerHTML = this.guessesRemaining;
+            this.guessesRemaining--;
+            document.getElementById("guess-count").innerHTML = this.guessesRemaining;
         }
     }
 
@@ -147,6 +147,7 @@ document.onkeypress = function(event) {
     var keyPressed = String.fromCharCode(event.which).toUpperCase();
     if (hangman == undefined) {
         hangman = new Game();
+        document.getElementById("directions").innerHTML = "CRANK THE VOLUME TO 11!";
         hangman.setQuestion();
     } else {
         hangman.assignKey(keyPressed);
