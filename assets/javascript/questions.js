@@ -35,22 +35,10 @@ var questions = [{
         audio: "assets/audio/Rich.mp3"
     },
     {
-        question: "Name this three-piece band formed in 2000 and currently consisting of Angus Andrew, Aaron Hemphill, and Julian Gross from Los Angeles.",
-        answer: "LIARS",
-        imgLink: "assets/images/liars.jpg",
-        audio: "assets/audio/The Overachievers.mp3"
-    },
-    {
         question: "Name the frontman of Radiohead.",
         answer: "THOM YORKE",
         imgLink: "assets/images/thom-yorke.jpg",
         audio: "assets/audio/A Brain In A Bottle.mp3"
-    },
-    {
-        question: "Name the lead singer of Yeah Yeah Yeahs.",
-        answer: "KAREN O",
-        imgLink: "assets/images/karen-o.jpg",
-        audio: "assets/audio/Pin.mp3"
     },
     {
         question: "Name this American rock band based in San Diego, California formed in 2008 by frontman Nathan Williams.",
