@@ -147,7 +147,7 @@ document.onkeypress = function(event) {
     var keyPressed = String.fromCharCode(event.which).toUpperCase();
     if (hangman == undefined) {
         hangman = new Game();
-        document.getElementById("directions").innerHTML = "CRANK THE VOLUME TO 11!";
+        document.getElementById("directions").innerHTML = "CRANK THE VOLUME!";
         console.log("Setting directions");
         hangman.setQuestion();
     } else {
