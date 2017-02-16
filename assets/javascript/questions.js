@@ -187,7 +187,7 @@ var questions = [{
     {
         question: "Name this indie rock band from Portland, Oregon, United States whose artwork for Friend and Foe was nominated for a Grammy Award for 'Best Recording Package.'",
         answer: "MENOMENA",
-        imgLink: "assets/images/les-claypool.jpg",
+        imgLink: "assets/images/menomena.jpg",
         audio: "assets/audio/The Pelican.mp3"
     },
     {
