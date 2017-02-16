@@ -39,11 +39,11 @@ body {
 }
 
 .blur {
-  -webkit-animation: blur 30s linear forwards;
-  -moz-animation: blur 30s linear forwards;
-  -ms-animation: blur 30s linear forwards;
-  -o-animation: blur 30s linear forwards;
-  animation: blur 30s linear forwards;
+  -webkit-animation: blur 45s linear forwards;
+  -moz-animation: blur 45s linear forwards;
+  -ms-animation: blur 45s linear forwards;
+  -o-animation: blur 45s linear forwards;
+  animation: blur 45s linear forwards;
 
 }
 

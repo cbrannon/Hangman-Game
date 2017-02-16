@@ -210,8 +210,56 @@ var questions = [{
     },
     {
         question: "Name this American indie rock band formed in Ruston, Louisiana by singer, guitarist, and songwriter Jeff Mangum in the late 1980s.",
-        answer: "MONSTERS OF FOLK",
-        imgLink: "assets/images/monsters-of-folk.jpg",
+        answer: "NEUTRAL MILK HOTEL",
+        imgLink: "assets/images/neutral-milk-hotel.jpg",
         audio: "assets/audio/Holland, 1945.mp3"
+    },
+    {
+        question: "Name this American industrial rock band founded in 1988 by Trent Reznor in Cleveland, Ohio.",
+        answer: "NINE INCH NAILS",
+        imgLink: "assets/images/nine-inch-nails.jpg",
+        audio: "assets/audio/Came Back Haunted.mp3"
+    },
+    {
+        question: "Name this American rock band formed by singer and guitarist Kurt Cobain and bassist Krist Novoselic in Aberdeen, Washington, in 1987.",
+        answer: "NIRVANA",
+        imgLink: "assets/images/nirvana.jpg",
+        audio: "assets/audio/Smells Like Teen Spirit.mp3"
+    },
+    {
+        question: "Name this English rock band formed in London. They achieved international acclaim with their progressive and psychedelic music.",
+        answer: "PINK FLOYD",
+        imgLink: "assets/images/pink-floyd.jpg",
+        audio: "assets/audio/Hey You.m4a"
+    },
+    {
+        question: "Name this American rock band based in San Francisco, California, currently composed of Les Claypool, Larry LaLonde and Tim Alexander.",
+        answer: "PRIMUS",
+        imgLink: "assets/images/primus.jpg",
+        audio: "assets/audio/The Toys Go Winding Down.mp3"
+    },
+    {
+        question: "Name this American rock band formed in 1975 in New York City and active until 1991 comprised of David Byrne, Chris Frantz, Tina Weymouth, and Jerry Harrison.",
+        answer: "TALKING HEADS",
+        imgLink: "assets/images/talking-heads.jpg",
+        audio: "assets/audio/Burning Down The House.mp3"
+    },
+    {
+        question: "Name this Australian psychedelic band created by Kevin Parker in 2007.",
+        answer: "TAME IMPALA",
+        imgLink: "assets/images/tame-impala.jpg",
+        audio: "assets/audio/Elephant.mp3"
+    },
+    {
+        question: "Name this American rock group that was formed in Detroit, Michigan, featuring four musicians associated with earlier musical projects: Jack White, Brendan Benson, Jack Lawrence, and Patrick Keeler.",
+        answer: "THE RACONTEURS",
+        imgLink: "assets/images/the-raconteurs.jpg",
+        audio: "assets/audio/Steady, As She Goes.mp3"
+    },
+    {
+        question: "Name this  rock band formed in New York, America, by singer/guitarist Lou Reed, multi-instrumentalist John Cale, guitarist Sterling Morrison, and drummer Angus MacLise.",
+        answer: "THE VELVET UNDERGROUND",
+        imgLink: "assets/images/velvet-underground.jpg",
+        audio: "assets/audio/Velvet Underground - 06 - Run Run Run.mp3"
     },
 ];
