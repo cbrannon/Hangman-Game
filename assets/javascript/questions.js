@@ -185,12 +185,6 @@ var questions = [{
         audio: "assets/audio/It's A Man's Man's Man's World.mp3"
     },
     {
-        question: "Name this English rock band formed in London in 1968 lead by Robert Fripp.",
-        answer: "KING CRIMSON",
-        imgLink: "assets/images/king-crimson.jpg",
-        audio: "assets/audio/Neal and Jack and Me.mp3"
-    },
-    {
         question: "Name this American supergroup, consisting of Jim James from My Morning Jacket, Conor Oberst and Mike Mogis from Bright Eyes, Will Johnson from Centro-matic and M. Ward half of She & Him.",
         answer: "MONSTERS OF FOLK",
         imgLink: "assets/images/monsters-of-folk.jpg",
