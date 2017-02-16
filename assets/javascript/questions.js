@@ -38,7 +38,7 @@ var questions = [{
         question: "Name this three-piece band formed in 2000 and currently consisting of Angus Andrew, Aaron Hemphill, and Julian Gross from Los Angeles.",
         answer: "LIARS",
         imgLink: "assets/images/liars.jpg",
-        audio: "assets/audio/Sailing To Byzantium.mp3"
+        audio: "assets/audio/The Overachievers.mp3"
     },
     {
         question: "Name the frontman of Radiohead.",
@@ -141,5 +141,77 @@ var questions = [{
         answer: "MASTADON",
         imgLink: "assets/images/mastadon.jpg",
         audio: "assets/audio/Oblivion.m4a"
+    },
+    {
+        question: "Name this French electronic music duo formed in 1993 by Guy-Manuel de Homem-Christo and Thomas Bangalter.",
+        answer: "DAFT PUNK",
+        imgLink: "assets/images/daft-punk.jpg",
+        audio: "assets/audio/Doin' It Right (feat. Panda Bear).mp3"
+    },
+    {
+        question: "Name this American post-hardcore band from El Paso, Texas, formed in 1993 consisting of consists of Cedric Bixler Omar Rodríguez, Paul Hinojos, Tony Hajjar and Keeley Davis.",
+        answer: "AT THE DRIVE IN",
+        imgLink: "assets/images/atdi.jpg",
+        audio: "assets/audio/Rolodex Proaganda.mp3"
+    },
+    {
+        question: "Bradford James Cox is an American singer-songwriter and musician, best known as the lead singer and guitarist of the indie rock band Deerhunter.",
+        answer: "ATLAS SOUND",
+        imgLink: "assets/images/atlas-sound.jpg",
+        audio: "assets/audio/Logos.mp3"
+    },
+    {
+        question: "Name this British virtual band created in 1998 by Damon Albarn and Jamie Hewlett",
+        answer: "GORILLAZ",
+        imgLink: "assets/images/gorillaz.jpg",
+        audio: "assets/audio/Stylo (Feat. Bobby Womack & Mos Def).mp3"
+    },
+    {
+        question: "Name this American singer-songwriter, musician, producer and actor who was the vocalist of influential proto-punk band The Stooges.",
+        answer: "IGGY POP",
+        imgLink: "assets/images/iggy-pop.jpg",
+        audio: "assets/audio/I Wanna Be Your Dog.mp3"
+    },
+    {
+        question: "Name this Canadian musician who is best known as the frontman of ____ ____ and the Shrines and for being one half of The ____ ____ & BBQ Show.",
+        answer: "KING KHAN",
+        imgLink: "assets/images/king-khan.jpg",
+        audio: "assets/audio/Land Of The Freak.mp3"
+    },
+    {
+        question: "Name this American musician, singer, songwriter, composer, author and actor best known as the bassist and lead vocalist of the band Primus.",
+        answer: "LES CLAYPOOL",
+        imgLink: "assets/images/les-claypool.jpg",
+        audio: "assets/audio/The Big Eyeball in the Sky.m4a"
+    },
+    {
+        question: "Name this indie rock band from Portland, Oregon, United States whose artwork for Friend and Foe was nominated for a Grammy Award for 'Best Recording Package.'",
+        answer: "MENOMENA",
+        imgLink: "assets/images/les-claypool.jpg",
+        audio: "assets/audio/The Pelican.mp3"
+    },
+    {
+        question: "Name this American singer, songwriter, record producer, dancer and bandleader who is often referred to as the 'Godfather of Soul'.",
+        answer: "JAMES BROWN",
+        imgLink: "assets/images/james-brown.jpg",
+        audio: "assets/audio/It's A Man's Man's Man's World.mp3"
+    },
+    {
+        question: "Name this English rock band formed in London in 1968 lead by Robert Fripp.",
+        answer: "KING CRIMSON",
+        imgLink: "assets/images/king-crimson.jpg",
+        audio: "assets/audio/Neal and Jack and Me.mp3"
+    },
+    {
+        question: "Name this American supergroup, consisting of Jim James from My Morning Jacket, Conor Oberst and Mike Mogis from Bright Eyes, Will Johnson from Centro-matic and M. Ward half of She & Him.",
+        answer: "MONSTERS OF FOLK",
+        imgLink: "assets/images/monsters-of-folk.jpg",
+        audio: "assets/audio/Man Named Truth.m4a"
+    },
+    {
+        question: "Name this American indie rock band formed in Ruston, Louisiana by singer, guitarist, and songwriter Jeff Mangum in the late 1980s.",
+        answer: "MONSTERS OF FOLK",
+        imgLink: "assets/images/monsters-of-folk.jpg",
+        audio: "assets/audio/Holland, 1945.mp3"
     },
 ];
